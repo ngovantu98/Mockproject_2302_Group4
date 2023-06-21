@@ -20,22 +20,22 @@ public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "`id`", unique = true, nullable = false)
+	@Column(name = "`id`")
 	private int id;
 
-	@Column(name = "`username`", nullable = false, length = 50, unique = true)
+	@Column(name = "`username`", length = 50)
 	private String userName;
 
-	@Column(name = "`email`", nullable = false, length = 50, unique = true)
+	@Column(name = "`email`", length = 50)
 	private String email;
 
-	@Column(name = "`password`", nullable = false, length = 800)
+	@Column(name = "`password`", length = 800)
 	private String password;
 
-	@Column(name = "`firstName`", nullable = false, length = 50)
+	@Column(name = "`firstName`", length = 50)
 	private String firstName;
 
-	@Column(name = "`lastName`", nullable = false, length = 50)
+	@Column(name = "`lastName`", length = 50)
 	private String lastName;
 
 	@Formula("concat(firstName, ' ', lastName)")

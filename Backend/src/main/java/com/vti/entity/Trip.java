@@ -24,8 +24,8 @@ public class Trip implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "`id`", unique = true, nullable = false)
-	private int id;
+	@Column(name = "`id`")
+	private short id;
 
 	@Column(name = "`name`", length = 50)
 	private String name;          
@@ -55,111 +55,105 @@ public class Trip implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date endDate;
-	
 
 	@Column(name = "`describe`", length = 50, nullable = false, unique = true)
 	private String describe;
+	
+	public Trip(short id, String name, String schedule, String pointDeparture, String destination,String hotel,Date startDate,Date endDate,short totalMember,String describe) {
+		this.id = id;
+		this.name = name;
+		this.schedule = schedule;
+		this.pointDeparture = pointDeparture;
+		this.destination = destination;
+		this.hotel = hotel;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.totalMember = totalMember;
+		this.describe = describe;
+	}
+	
+	public Trip() {
+	}
 
-
-	public int getId() {
+	public short getId() {
 		return id;
 	}
 
-
-	public void setId(int id) {
+	public void setId(short id) {
 		this.id = id;
 	}
-
 
 	public String getName() {
 		return name;
 	}
 
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 
 	public String getSchedule() {
 		return schedule;
 	}
 
-
 	public void setSchedule(String schedule) {
 		this.schedule = schedule;
 	}
-
 
 	public String getPointDeparture() {
 		return pointDeparture;
 	}
 
-
 	public void setPointDeparture(String pointDeparture) {
 		this.pointDeparture = pointDeparture;
 	}
-
 
 	public String getDestination() {
 		return destination;
 	}
 
-
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
-
 
 	public String getHotel() {
 		return hotel;
 	}
 
-
 	public void setHotel(String hotel) {
 		this.hotel = hotel;
 	}
-
 
 	public short getTotalMember() {
 		return totalMember;
 	}
 
-
 	public void setTotalMember(short totalMember) {
 		this.totalMember = totalMember;
 	}
-
 
 	public Date getStartDate() {
 		return startDate;
 	}
 
-
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-
 
 	public Date getEndDate() {
 		return endDate;
 	}
 
-
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-
 
 	public String getDescribe() {
 		return describe;
 	}
 
-
 	public void setDescribe(String describe) {
 		this.describe = describe;
 	}
-
 
 	@Override
 	public String toString() {
@@ -167,7 +161,6 @@ public class Trip implements Serializable {
 				+ ", destination=" + destination + ", hotel=" + hotel + ", totalMember=" + totalMember + ", startDate="
 				+ startDate + ", endDate=" + endDate + ", describe=" + describe + "]";
 	}
-
 	
-
+	
 }

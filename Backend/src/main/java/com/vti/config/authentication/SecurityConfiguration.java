@@ -53,9 +53,9 @@ public class SecurityConfiguration {
         		.authorizeHttpRequests(auth -> {
 					try {
 						auth
-							.requestMatchers("/api/v1/login").permitAll()
-							.requestMatchers("/api/v1/users/profile").authenticated()
-							.requestMatchers("/api/v1/users/**").permitAll()
+//							.requestMatchers("/api/v1/login").permitAll()
+//							.requestMatchers("/api/v1/users/profile").authenticated()
+							.requestMatchers("/api/v1/**").permitAll()
 							.anyRequest().authenticated()
 							.and()
 							.httpBasic()
@@ -70,9 +70,9 @@ public class SecurityConfiguration {
         		.addFilterBefore(
         				new JWTAuthenticationFilter("/api/v1/login", authenticationManager(), service), 
         				UsernamePasswordAuthenticationFilter.class) 
-        		.addFilterBefore(
-        				new JWTAuthorizationFilter(), 
-        				UsernamePasswordAuthenticationFilter.class)
+//        		.addFilterBefore(
+//        				new JWTAuthorizationFilter(), 
+//        				UsernamePasswordAuthenticationFilter.class)
         		.exceptionHandling(exceptionHandling ->
                 		exceptionHandling.accessDeniedPage("/403"))
         		.build();

@@ -54,5 +54,4 @@ public class TripService implements ITripService {
 	public void deleteTrips(List<Short> ids) {
 		repository.deleteByIdIn(ids);	
 	}
-
 }

@@ -3,6 +3,7 @@ package com.vti.dto;
 
 import java.util.Date;
 
+import com.vti.entity.Tour;
 import com.vti.entity.Trip;
 
 public class TripFormForCreating {
@@ -100,8 +101,8 @@ public class TripFormForCreating {
 	public void setDescribe(String describe) {
 		this.describe = describe;
 	}
-
+	
 	public Trip toEntity() {
-		return new Trip(id, name, schedule, pointDeparture, destination, hotel, endDate, startDate, totalMember, describe);
+		return new Trip(id, name, schedule, pointDeparture, destination,hotel,endDate,startDate,totalMember,describe);
 	}
 }

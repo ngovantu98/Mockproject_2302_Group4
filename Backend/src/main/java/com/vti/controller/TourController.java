@@ -17,13 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vti.dto.GroupFormForCreating;
-import com.vti.dto.GroupFormForUpdating;
 import com.vti.dto.TourFormForCreating;
 import com.vti.dto.TourFormForUpdating;
-import com.vti.dto.filter.GroupFilter;
-import com.vti.entity.Group;
-import com.vti.service.IGroupService;
+import com.vti.dto.filter.TourFilter;
+import com.vti.entity.Tour;
 import com.vti.service.ITourService;
 
 @RestController
@@ -32,21 +29,21 @@ public class TourController {
 
 	@Autowired
 	private ITourService service;
-//
-//	@GetMapping()
-//	public ResponseEntity<?> getAllTours(
-//			Pageable pageable, 
-//			TourFilter filter,
-//			@RequestParam(required = false) 
-//			String search) {
-//		Page<Tour> entities = service.getAllTours(pageable, filter, search);
-//		return new ResponseEntity<>(entities, HttpStatus.OK);
-//	}
-//
-//	@GetMapping(value = "/name/{name}")
-//	public ResponseEntity<?> existsTourByName(@PathVariable(name = "name") String name) {
-//		return new ResponseEntity<>(service.isTourExistsByName(name), HttpStatus.OK);
-//	}
+
+	@GetMapping()
+	public ResponseEntity<?> getAllTours(
+			Pageable pageable, 
+			TourFilter filter,
+			@RequestParam(required = false) 
+			String search) {
+		Page<Tour> entities = service.getAllTours(pageable, filter, search);
+		return new ResponseEntity<>(entities, HttpStatus.OK);
+	}
+
+	@GetMapping("/name")
+	public ResponseEntity<?> getTourByName(@RequestParam String name) {
+		return new ResponseEntity<>(service.getTourByName(name), HttpStatus.OK);
+	}
 
 	@PostMapping()
 	public ResponseEntity<?> createTour(@RequestBody TourFormForCreating form) {
@@ -54,10 +51,10 @@ public class TourController {
 		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
 	}
 
-//	@GetMapping(value = "/{id}")
-//	public ResponseEntity<?> getTourByID(@PathVariable(name = "id") short id) {
-//		return new ResponseEntity<>(service.getTourByID(id), HttpStatus.OK);
-//	}
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<?> getTourByID(@PathVariable(name = "id") short id) {
+		return new ResponseEntity<>(service.getTourByID(id), HttpStatus.OK);
+	}
 
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<?> updateTour(@PathVariable(name = "id") short id, @RequestBody TourFormForUpdating form) {

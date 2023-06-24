@@ -8,7 +8,7 @@ import com.vti.entity.Trip;
 
 public class TripFormForCreating {
 
-	private short id;
+	private short tripId;
 	private String name;
 	private String schedule;
 	private String pointDeparture;
@@ -22,12 +22,12 @@ public class TripFormForCreating {
 	public TripFormForCreating() {
 	}
 
-	public short getId() {
-		return id;
+	public short getTripId() {
+		return tripId;
 	}
 
-	public void setId(short id) {
-		this.id = id;
+	public void setTripId(short id) {
+		this.tripId = id;
 	}
 
 	public String getName() {
@@ -103,6 +103,6 @@ public class TripFormForCreating {
 	}
 	
 	public Trip toEntity() {
-		return new Trip(id, name, schedule, pointDeparture, destination,hotel,endDate,startDate,totalMember,describe);
+		return new Trip(tripId, name, schedule, pointDeparture, destination,hotel,endDate,startDate,totalMember,describe);
 	}
 }

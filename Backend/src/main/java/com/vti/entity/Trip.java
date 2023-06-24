@@ -10,6 +10,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -58,6 +60,10 @@ public class Trip implements Serializable {
 
 	@Column(name = "`describe`", length = 50, nullable = false, unique = true)
 	private String describe;
+
+	@ManyToOne
+	@JoinColumn(name = "tour_id")
+	private Tour tour;
 	
 	public Trip(short id, String name, String schedule, String pointDeparture, String destination,String hotel,Date startDate,Date endDate,short totalMember,String describe) {
 		this.id = id;

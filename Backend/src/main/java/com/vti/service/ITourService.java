@@ -10,17 +10,20 @@ import com.vti.dto.GroupFormForUpdating;
 import com.vti.dto.TourFormForCreating;
 import com.vti.dto.TourFormForUpdating;
 import com.vti.dto.filter.GroupFilter;
+import com.vti.dto.filter.TourFilter;
 import com.vti.entity.Group;
+import com.vti.entity.Tour;
+import com.vti.entity.Trip;
 
 public interface ITourService {
 
-//	Page<Tour> getAllTours(Pageable pageable, TourFilter filter, String search);
+	Page<Tour> getAllTours(Pageable pageable, TourFilter filter, String search);
 //
-//	boolean isTourExistsByName(String name);
+	List<Tour> getTourByName(String name);
 
 	void createTour(TourFormForCreating form);
 
-//	Group getTourByID(short id);
+	Tour getTourByID(short id);
 
 	void updateTour(short id, TourFormForUpdating form);
 

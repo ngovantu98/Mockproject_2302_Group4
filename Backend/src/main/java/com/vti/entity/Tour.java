@@ -1,7 +1,9 @@
 package com.vti.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -10,6 +12,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -24,6 +29,8 @@ public class Tour implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private short id;
+	
+	
 
 	@Column(name = "`name`", length = 50)
 	private String name;
@@ -45,6 +52,12 @@ public class Tour implements Serializable {
 	//ghế trống
 	@Column(name = "emptySeat")
 	private short emptySeat;
+	
+	@OneToMany(mappedBy = "tour")
+	private List<Trip> trips;
+
+//	@OneToMany(mappedBy = "Booking")
+//	private List<Booking> bookings;
 	
 	public Tour(short id, String name, String departurePlace,Date departureDay,short emptySeat,String describe) {
 		this.id = id;

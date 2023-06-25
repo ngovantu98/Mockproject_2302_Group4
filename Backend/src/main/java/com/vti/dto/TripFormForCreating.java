@@ -2,19 +2,16 @@ package com.vti.dto;
 
 
 import java.util.Date;
-
-import com.vti.entity.Tour;
 import com.vti.entity.Trip;
 
 public class TripFormForCreating {
 
-	private short tripId;
+	private short id;
 	private String name;
 	private String schedule;
 	private String pointDeparture;
 	private String destination;
 	private String hotel;
-	private short totalMember;
 	private Date startDate;
 	private Date endDate;
 	private String describe;
@@ -22,12 +19,12 @@ public class TripFormForCreating {
 	public TripFormForCreating() {
 	}
 
-	public short getTripId() {
-		return tripId;
+	public short getid() {
+		return id;
 	}
 
 	public void setTripId(short id) {
-		this.tripId = id;
+		this.id = id;
 	}
 
 	public String getName() {
@@ -70,14 +67,6 @@ public class TripFormForCreating {
 		this.hotel = hotel;
 	}
 
-	public short getTotalMember() {
-		return totalMember;
-	}
-
-	public void setTotalMember(short totalMember) {
-		this.totalMember = totalMember;
-	}
-
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -103,6 +92,6 @@ public class TripFormForCreating {
 	}
 	
 	public Trip toEntity() {
-		return new Trip(tripId, name, schedule, pointDeparture, destination,hotel,endDate,startDate,totalMember,describe);
+		return new Trip(id, name, schedule, pointDeparture, destination,hotel,endDate,startDate,describe);
 	}
 }

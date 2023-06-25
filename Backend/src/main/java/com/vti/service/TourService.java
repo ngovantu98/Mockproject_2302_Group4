@@ -41,11 +41,13 @@ public class TourService implements ITourService {
 
 	public void updateTour(short id, TourFormForUpdating form) {
 		Tour entity = repository.findById(id).get();
+		entity.setPrice(form.getPrice());
 		entity.setName(form.getName());
 		entity.setDeparturePlace(form.getDeparturePlace());
-		entity.setEmptySeat(form.getEmptySeat());
-		entity.setDescribe(form.getDescribe());
 		entity.setDepartureDay(form.getDepartureDay());
+		entity.setEmptySeat(form.getEmptySeat());
+		entity.setTime(form.getTime());
+		entity.setDescribe(form.getDescribe());
 		repository.save(entity);
 	}
 
@@ -53,5 +55,4 @@ public class TourService implements ITourService {
 	public void deleteTours(List<Short> ids) {
 		repository.deleteByIdIn(ids);	
 	}
-
 }

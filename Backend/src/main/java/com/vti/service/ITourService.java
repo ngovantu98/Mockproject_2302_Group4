@@ -18,7 +18,7 @@ import com.vti.entity.Trip;
 public interface ITourService {
 
 	Page<Tour> getAllTours(Pageable pageable, TourFilter filter, String search);
-//
+
 	List<Tour> getTourByName(String name);
 
 	void createTour(TourFormForCreating form);

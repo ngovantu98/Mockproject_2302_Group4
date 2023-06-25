@@ -1,17 +1,20 @@
 package com.vti.dto;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import com.vti.entity.Tour;
 
 public class TourFormForCreating {
 
 	private short id;
+	private BigDecimal price;
 	private String name;
 	private String departurePlace;
 	private short emptySeat;
 	private Date departureDay;
+	private String time;
 	private String describe;
-
+	
 	public TourFormForCreating() {
 	}
 
@@ -21,6 +24,14 @@ public class TourFormForCreating {
 
 	public void setId(short id) {
 		this.id = id;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
 	}
 
 	public String getName() {
@@ -34,7 +45,7 @@ public class TourFormForCreating {
 	public String getDeparturePlace() {
 		return departurePlace;
 	}
-	
+
 	public void setDeparturePlace(String departurePlace) {
 		this.departurePlace = departurePlace;
 	}
@@ -55,6 +66,14 @@ public class TourFormForCreating {
 		this.departureDay = departureDay;
 	}
 
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
 	public String getDescribe() {
 		return describe;
 	}
@@ -64,7 +83,7 @@ public class TourFormForCreating {
 	}
 
 	public Tour toEntity() {
-		return new Tour(id, name, departurePlace, departureDay, emptySeat,describe);
+		return new Tour(id, price, name, departurePlace ,departureDay ,emptySeat ,time, describe);
 	}
 
 }

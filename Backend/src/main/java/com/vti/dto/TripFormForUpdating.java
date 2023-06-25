@@ -10,10 +10,10 @@ public class TripFormForUpdating {
 	private String pointDeparture;
 	private String destination;
 	private String hotel;
-	private short totalMember;
 	private Date startDate;
 	private Date endDate;
 	private String describe;
+	
 	public short getId() {
 		return id;
 	}
@@ -50,12 +50,7 @@ public class TripFormForUpdating {
 	public void setHotel(String hotel) {
 		this.hotel = hotel;
 	}
-	public short getTotalMember() {
-		return totalMember;
-	}
-	public void setTotalMember(short totalMember) {
-		this.totalMember = totalMember;
-	}
+	
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -75,5 +70,4 @@ public class TripFormForUpdating {
 		this.describe = describe;
 	}
 
-	
 }

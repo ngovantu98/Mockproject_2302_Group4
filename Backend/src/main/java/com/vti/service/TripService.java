@@ -47,7 +47,6 @@ public class TripService implements ITripService {
 		entity.setPointDeparture(form.getPointDeparture());
 		entity.setDestination(form.getDestination());
 		entity.setHotel(form.getHotel());
-		entity.setTotalMember(form.getTotalMember());
 		entity.setStartDate(form.getStartDate());
 		entity.setEndDate(form.getEndDate());
 		entity.setDescribe(form.getDescribe());

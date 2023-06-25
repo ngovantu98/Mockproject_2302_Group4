@@ -1,25 +1,16 @@
 package com.vti.entity;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
-
+import java.math.BigDecimal;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.Formula;
 
 @Entity
 @Table(name = "`Booking`")
@@ -32,10 +23,16 @@ public class Booking implements Serializable {
 	private short id;
 
 	@Column(name = "`name`", length = 50)
-	private String name;          
+	private String name;
+	
+	@Column(name = "`status`", length = 50)
+	private String status;
 	
 	@Column(name = "totalMember")
 	private short totalMember;
+	
+	@Column(name = "price")
+	private BigDecimal price;
 	
 	@ManyToOne
 	@JoinColumn(name = "tour_id")
@@ -45,9 +42,11 @@ public class Booking implements Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	public Booking(short id, String name,short totalMember) {
+	public Booking(short id, String name,String status,BigDecimal price,short totalMember) {
 		this.id = id;
 		this.name = name;
+		this.status = status;
+		this.price = price;
 		this.totalMember = totalMember;
 		
 	}
@@ -71,7 +70,13 @@ public class Booking implements Serializable {
 		this.name = name;
 	}
 
-	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public short getTotalMember() {
 		return totalMember;
@@ -81,5 +86,34 @@ public class Booking implements Serializable {
 		this.totalMember = totalMember;
 	}
 
-	
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public Tour getTour() {
+		return tour;
+	}
+
+	public void setTour(Tour tour) {
+		this.tour = tour;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "Booking [id=" + id + ", name=" + name + ", status=" + status + ", totalMember=" + totalMember
+				+ ", price=" + price + ", tour=" + tour + ", user=" + user + "]";
+	}
+
 }

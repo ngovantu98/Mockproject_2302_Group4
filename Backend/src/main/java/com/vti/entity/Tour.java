@@ -1,9 +1,9 @@
 package com.vti.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.math.BigDecimal;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -12,8 +12,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -30,13 +28,14 @@ public class Tour implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private short id;
 	
-	
-
-	@Column(name = "`name`", length = 50)
+	@Column(name = "`name`", length = 500)
 	private String name;
 	
+	@Column(name = "`describe`",length = 500)
+	private String describe;
+	
 	//Nơi khởi hành
-	@Column(name = "`departurePlace`", length = 50)
+	@Column(name = "`departurePlace`", length = 100)
 	private String departurePlace;
 	
 	//Ngày khời hành
@@ -46,31 +45,33 @@ public class Tour implements Serializable {
 	private Date departureDay;
 	
 	//Mô tả chi tiết
-	@Column(name = "`describe`", length = 500)
-	private String describe;
-
 	//ghế trống
-	@Column(name = "emptySeat")
+	@Column(name = "`emptySeat`")
 	private short emptySeat;
+	
+	@Column(name = "`time`",length = 100)
+	private String time;
+	
+	@Column(name = "`price`")
+	private BigDecimal price;
 	
 	@OneToMany(mappedBy = "tour")
 	private List<Trip> trips;
 
-//	@OneToMany(mappedBy = "Booking")
-//	private List<Booking> bookings;
-	
-	public Tour(short id, String name, String departurePlace,Date departureDay,short emptySeat,String describe) {
+	public Tour(short id, BigDecimal price, String name, String departurePlace,Date departureDay,short emptySeat, String time,String describe) {
 		this.id = id;
+		this.price = price;
 		this.name = name;
 		this.departurePlace = departurePlace;
 		this.departureDay = departureDay;
 		this.emptySeat = emptySeat;
+		this.time = time;
 		this.describe = describe;
 	}
 
 	public Tour() {
 	}
-	
+
 	public short getId() {
 		return id;
 	}
@@ -103,14 +104,6 @@ public class Tour implements Serializable {
 		this.departureDay = departureDay;
 	}
 
-	public String getDescribe() {
-		return describe;
-	}
-
-	public void setDescribe(String describe) {
-		this.describe = describe;
-	}
-
 	public short getEmptySeat() {
 		return emptySeat;
 	}
@@ -119,9 +112,43 @@ public class Tour implements Serializable {
 		this.emptySeat = emptySeat;
 	}
 
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public String getDescribe() {
+		return describe;
+	}
+
+	public void setDescribe(String describe) {
+		this.describe = describe;
+	}
+
+	public List<Trip> getTrips() {
+		return trips;
+	}
+
+	public void setTrips(List<Trip> trips) {
+		this.trips = trips;
+	}
+
 	@Override
 	public String toString() {
 		return "Tour [id=" + id + ", name=" + name + ", departurePlace=" + departurePlace + ", departureDay="
-				+ departureDay + ", describe=" + describe + ", emptySeat=" + emptySeat + "]";
+				+ departureDay + ", emptySeat=" + emptySeat + ", time=" + time + ", price=" + price + ", describe="
+				+ describe + ", trips=" + trips + "]";
 	}
+
 }

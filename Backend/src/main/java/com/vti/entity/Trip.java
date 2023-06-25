@@ -5,8 +5,7 @@ import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,7 +16,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.Formula;
+
 
 @Entity
 @Table(name = "`Trip`")
@@ -29,24 +28,20 @@ public class Trip implements Serializable {
 	@Column(name = "`id`")
 	private short id;
 
-	@Column(name = "`name`", length = 50)
+	@Column(name = "`name`", length = 100)
 	private String name;          
 	
-	@Column(name = "`schedule`", length = 50)
+	@Column(name = "`schedule`", length = 100)
 	private String schedule;
 	
-	@Column(name = "`pointDeparture`", length = 50)
+	@Column(name = "`pointDeparture`", length = 100)
 	private String pointDeparture;
 	
-	@Column(name = "`destination`", length = 50)
+	@Column(name = "`destination`", length = 100)
 	private String destination;
 	
-	@Column(name = "`hotel`", length = 50)
+	@Column(name = "`hotel`", length = 100)
 	private String hotel;
-	
-	@Column(name = "totalMember")
-	private short totalMember;
-	
 	
 	@Column(name = "`startDate`")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -58,14 +53,14 @@ public class Trip implements Serializable {
 	@CreationTimestamp
 	private Date endDate;
 
-	@Column(name = "`describe`", length = 50, nullable = false, unique = true)
+	@Column(name = "`describe`", length = 500)
 	private String describe;
 
 	@ManyToOne
 	@JoinColumn(name = "tour_id")
 	private Tour tour;
 	
-	public Trip(short id, String name, String schedule, String pointDeparture, String destination,String hotel,Date startDate,Date endDate,short totalMember,String describe) {
+	public Trip(short id, String name, String schedule, String pointDeparture, String destination,String hotel,Date startDate,Date endDate,String describe) {
 		this.id = id;
 		this.name = name;
 		this.schedule = schedule;
@@ -74,10 +69,9 @@ public class Trip implements Serializable {
 		this.hotel = hotel;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.totalMember = totalMember;
 		this.describe = describe;
 	}
-	
+
 	public Trip() {
 	}
 
@@ -129,14 +123,6 @@ public class Trip implements Serializable {
 		this.hotel = hotel;
 	}
 
-	public short getTotalMember() {
-		return totalMember;
-	}
-
-	public void setTotalMember(short totalMember) {
-		this.totalMember = totalMember;
-	}
-
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -164,9 +150,8 @@ public class Trip implements Serializable {
 	@Override
 	public String toString() {
 		return "Trip [id=" + id + ", name=" + name + ", schedule=" + schedule + ", pointDeparture=" + pointDeparture
-				+ ", destination=" + destination + ", hotel=" + hotel + ", totalMember=" + totalMember + ", startDate="
-				+ startDate + ", endDate=" + endDate + ", describe=" + describe + "]";
+				+ ", destination=" + destination + ", hotel=" + hotel + ", startDate=" + startDate + ", endDate="
+				+ endDate + ", describe=" + describe + ", tour=" + tour + "]";
 	}
-	
-	
+
 }

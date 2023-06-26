@@ -13,7 +13,7 @@ public class TourFormForUpdating {
 	private Date departureDay;
 	private String time;
 	private String describe;
-	
+	private String tourImage;
 	public short getId() {
 		return id;
 	}
@@ -61,6 +61,12 @@ public class TourFormForUpdating {
 	}
 	public void setDescribe(String describe) {
 		this.describe = describe;
+	}
+	public String getTourImage() {
+		return tourImage;
+	}
+	public void setTourImage(String tourImage) {
+		this.tourImage = tourImage;
 	}
 
 }

@@ -55,12 +55,19 @@ public class Trip implements Serializable {
 
 	@Column(name = "`describe`", length = 500)
 	private String describe;
+	
+	@Column(name = "`tripImage`", length = 100)
+	private String tripImage;
 
+	@Column(name = "`tripManage`", length = 100)
+	private String tripManage;
+
+	
 	@ManyToOne
 	@JoinColumn(name = "tour_id")
 	private Tour tour;
 	
-	public Trip(short id, String name, String schedule, String pointDeparture, String destination,String hotel,Date startDate,Date endDate,String describe) {
+	public Trip(short id, String name, String schedule, String pointDeparture, String destination,String hotel,Date startDate,Date endDate,String describe,String tripImage,String tripManage) {
 		this.id = id;
 		this.name = name;
 		this.schedule = schedule;
@@ -70,6 +77,8 @@ public class Trip implements Serializable {
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.describe = describe;
+		this.tripImage = tripImage;
+		this.tripManage = tripManage;
 	}
 
 	public Trip() {
@@ -147,11 +156,36 @@ public class Trip implements Serializable {
 		this.describe = describe;
 	}
 
+	public String getTripImage() {
+		return tripImage;
+	}
+
+	public void setTripImage(String tripImage) {
+		this.tripImage = tripImage;
+	}
+
+	public String getTripManage() {
+		return tripManage;
+	}
+
+	public void setTripManage(String tripManage) {
+		this.tripManage = tripManage;
+	}
+
+	public Tour getTour() {
+		return tour;
+	}
+
+	public void setTour(Tour tour) {
+		this.tour = tour;
+	}
+
 	@Override
 	public String toString() {
 		return "Trip [id=" + id + ", name=" + name + ", schedule=" + schedule + ", pointDeparture=" + pointDeparture
 				+ ", destination=" + destination + ", hotel=" + hotel + ", startDate=" + startDate + ", endDate="
-				+ endDate + ", describe=" + describe + ", tour=" + tour + "]";
+				+ endDate + ", describe=" + describe + ", tripImage=" + tripImage + ", tripManage=" + tripManage
+				+ ", tour=" + tour + "]";
 	}
 
 }

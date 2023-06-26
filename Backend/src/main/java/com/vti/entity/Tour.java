@@ -55,10 +55,13 @@ public class Tour implements Serializable {
 	@Column(name = "`price`")
 	private BigDecimal price;
 	
+	@Column(name = "`tourImage`",length = 100)
+	private String tourImage;
+	
 	@OneToMany(mappedBy = "tour")
 	private List<Trip> trips;
 
-	public Tour(short id, BigDecimal price, String name, String departurePlace,Date departureDay,short emptySeat, String time,String describe) {
+	public Tour(short id, BigDecimal price, String name, String departurePlace,Date departureDay,short emptySeat, String time,String describe,String tourImage) {
 		this.id = id;
 		this.price = price;
 		this.name = name;
@@ -67,6 +70,7 @@ public class Tour implements Serializable {
 		this.emptySeat = emptySeat;
 		this.time = time;
 		this.describe = describe;
+		this.tourImage = tourImage;
 	}
 
 	public Tour() {
@@ -86,6 +90,14 @@ public class Tour implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDescribe() {
+		return describe;
+	}
+
+	public void setDescribe(String describe) {
+		this.describe = describe;
 	}
 
 	public String getDeparturePlace() {
@@ -128,12 +140,12 @@ public class Tour implements Serializable {
 		this.price = price;
 	}
 
-	public String getDescribe() {
-		return describe;
+	public String getTourImage() {
+		return tourImage;
 	}
 
-	public void setDescribe(String describe) {
-		this.describe = describe;
+	public void setTourImage(String tourImage) {
+		this.tourImage = tourImage;
 	}
 
 	public List<Trip> getTrips() {
@@ -146,9 +158,9 @@ public class Tour implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Tour [id=" + id + ", name=" + name + ", departurePlace=" + departurePlace + ", departureDay="
-				+ departureDay + ", emptySeat=" + emptySeat + ", time=" + time + ", price=" + price + ", describe="
-				+ describe + ", trips=" + trips + "]";
+		return "Tour [id=" + id + ", name=" + name + ", describe=" + describe + ", departurePlace=" + departurePlace
+				+ ", departureDay=" + departureDay + ", emptySeat=" + emptySeat + ", time=" + time + ", price=" + price
+				+ ", tourImage=" + tourImage + ", trips=" + trips + "]";
 	}
 
 }

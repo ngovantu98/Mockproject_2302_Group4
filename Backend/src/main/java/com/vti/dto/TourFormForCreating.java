@@ -14,9 +14,10 @@ public class TourFormForCreating {
 	private Date departureDay;
 	private String time;
 	private String describe;
+	private String tourImage;
 	
-	public TourFormForCreating() {
-	}
+	
+	
 
 	public short getId() {
 		return id;
@@ -82,8 +83,16 @@ public class TourFormForCreating {
 		this.describe = describe;
 	}
 
+	public String getTourImage() {
+		return tourImage;
+	}
+
+	public void setTourImage(String tourImage) {
+		this.tourImage = tourImage;
+	}
+
 	public Tour toEntity() {
-		return new Tour(id, price, name, departurePlace ,departureDay ,emptySeat ,time, describe);
+		return new Tour(id, price, name, departurePlace ,departureDay ,emptySeat ,time, describe,tourImage);
 	}
 
 }

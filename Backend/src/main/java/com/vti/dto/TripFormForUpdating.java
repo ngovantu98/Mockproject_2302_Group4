@@ -13,6 +13,8 @@ public class TripFormForUpdating {
 	private Date startDate;
 	private Date endDate;
 	private String describe;
+	private String tripImage;
+	private String tripManage;
 	
 	public short getId() {
 		return id;
@@ -50,7 +52,6 @@ public class TripFormForUpdating {
 	public void setHotel(String hotel) {
 		this.hotel = hotel;
 	}
-	
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -69,5 +70,17 @@ public class TripFormForUpdating {
 	public void setDescribe(String describe) {
 		this.describe = describe;
 	}
-
+	public String getTripImage() {
+		return tripImage;
+	}
+	public void setTripImage(String tripImage) {
+		this.tripImage = tripImage;
+	}
+	public String getTripManage() {
+		return tripManage;
+	}
+	public void setTripManage(String tripManage) {
+		this.tripManage = tripManage;
+	}
+	
 }

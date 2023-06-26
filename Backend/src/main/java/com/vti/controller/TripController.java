@@ -17,15 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vti.dto.GroupFormForCreating;
-import com.vti.dto.GroupFormForUpdating;
+
 import com.vti.dto.TripFormForCreating;
 import com.vti.dto.TripFormForUpdating;
-import com.vti.dto.filter.GroupFilter;
 import com.vti.dto.filter.TripFilter;
-import com.vti.entity.Group;
 import com.vti.entity.Trip;
-import com.vti.service.IGroupService;
 import com.vti.service.ITripService;
 
 @RestController

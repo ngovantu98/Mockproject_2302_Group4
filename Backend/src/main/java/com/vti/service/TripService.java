@@ -50,6 +50,8 @@ public class TripService implements ITripService {
 		entity.setStartDate(form.getStartDate());
 		entity.setEndDate(form.getEndDate());
 		entity.setDescribe(form.getDescribe());
+		entity.setTripImage(form.getTripImage());
+		entity.setTripManage(form.getTripManage());
 		repository.save(entity);
 	}
 	

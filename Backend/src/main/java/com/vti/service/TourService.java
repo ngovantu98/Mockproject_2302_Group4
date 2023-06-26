@@ -48,6 +48,7 @@ public class TourService implements ITourService {
 		entity.setEmptySeat(form.getEmptySeat());
 		entity.setTime(form.getTime());
 		entity.setDescribe(form.getDescribe());
+		entity.setTourImage(form.getTourImage());
 		repository.save(entity);
 	}
 

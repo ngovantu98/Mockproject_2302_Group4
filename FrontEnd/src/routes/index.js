@@ -118,16 +118,22 @@ const Calendar = async(() => import("../pages/calendar/Calendar"));
 const VectorMaps = async(() => import("../pages/maps/VectorMaps"));
 const GoogleMaps = async(() => import("../pages/maps/GoogleMaps"));
 
+
+//tour
+const Tour = async(() => import("../pages/tour/Tour"));
+
 // Routes
+
+
 const landingRoutes = {
-  path: "/",
+  path: "/landing",
   name: "Landing Page",
   component: Landing,
   children: null
 };
 
 const dashboardRoutes = {
-  path: "/dashboard",
+  path: "/",
   name: "Dashboards",
   header: "Pages",
   badgeColor: "primary",
@@ -136,9 +142,10 @@ const dashboardRoutes = {
   containsHome: true,
   children: [
     {
-      path: "/dashboard/default",
+      path: "/",
+      // path: "/dashboard/default",
       name: "Default",
-      component: withAuth(Default)
+      component: withAuth(Tour)
     },
     {
       path: "/dashboard/analytics",
@@ -164,6 +171,22 @@ const dashboardRoutes = {
     }
   ]
 };
+
+const tourRoutes = {
+  path: "/tours",
+  name: "Tour",
+  icon: ListIcon,
+  component: Tour,
+  children: null
+};
+
+// const tourRoutes = {
+//   path: "/tours",
+//   name: "Tour",
+//   icon: ListIcon,
+//   component: Tour,
+//   children: null
+// };
 
 const groupRoutes = {
   path: "/groups",
@@ -608,6 +631,7 @@ const settingsRoutes = {
 // Dashboard specific routes
 export const dashboard = [
   dashboardRoutes,
+  tourRoutes,
   groupRoutes,
   pageRoutes,
   layoutRoutes,
@@ -636,6 +660,7 @@ export const page = [authRoutes];
 // All routes
 export default [
   dashboardRoutes,
+  tourRoutes,
   groupRoutes,
   pageRoutes,
   authRoutes,

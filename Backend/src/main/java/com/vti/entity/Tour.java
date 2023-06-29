@@ -53,7 +53,7 @@ public class Tour implements Serializable {
 	private String time;
 	
 	@Column(name = "`price`")
-	private BigDecimal price;
+	private String price;
 	
 	@Column(name = "`tourImage`",length = 100)
 	private String tourImage;
@@ -61,7 +61,7 @@ public class Tour implements Serializable {
 	@OneToMany(mappedBy = "tour")
 	private List<Trip> trips;
 
-	public Tour(short id, BigDecimal price, String name, String departurePlace,Date departureDay,short emptySeat, String time,String describe,String tourImage) {
+	public Tour(short id, String price, String name, String departurePlace,Date departureDay,short emptySeat, String time,String describe,String tourImage) {
 		this.id = id;
 		this.price = price;
 		this.name = name;
@@ -132,11 +132,11 @@ public class Tour implements Serializable {
 		this.time = time;
 	}
 
-	public BigDecimal getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 

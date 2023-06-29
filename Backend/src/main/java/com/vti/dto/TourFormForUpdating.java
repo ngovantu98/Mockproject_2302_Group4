@@ -6,7 +6,7 @@ import java.util.Date;
 public class TourFormForUpdating {
 	
 	private short id;
-	private BigDecimal price;
+	private String price;
 	private String name;
 	private String departurePlace;
 	private short emptySeat;
@@ -20,10 +20,10 @@ public class TourFormForUpdating {
 	public void setId(short id) {
 		this.id = id;
 	}
-	public BigDecimal getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(BigDecimal price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	public String getName() {

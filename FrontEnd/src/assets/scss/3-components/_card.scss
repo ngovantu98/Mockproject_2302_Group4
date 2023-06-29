@@ -33,6 +33,71 @@
   font-weight: $font-weight-normal;
 }
 
+.tieude{
+  font-size:40px;
+  text-align:center;
+  font-weight: bold;
+
+}
+
+.tieude2{
+  font-size:18px;
+  text-align:center;
+  font-style: italic;
+  color: green;
+
+}
+
+.tieude3{
+  font-size:30px;
+  text-align:center;
+  font-weight: bold;
+
+}
+
+.name{
+  font-size:20px;
+  font-weight: bold;
+  font-family:serif;
+}
+
+.departurePlace{
+  font-size:15px;
+  font-weight: bold;
+  font-family:serif;
+}
+
+.time{
+  font-size:15px;
+  font-family:serif;
+}
+
+.price{
+  font-size:20px;
+  font-family:serif;
+  color: red;
+}
+
+.emptySeat{
+  font-size:18px;
+  font-family:serif;
+  font-weight: bold;
+  color: red;
+}
+
+.describe{
+  font-size:17px;
+  font-weight: bold;
+  font-family:serif;
+}
+
+.totourImage{
+  width:504.984px;
+  height:310.203px;
+}
+
+
+
 .card-table {
   margin-bottom: 0;
 }

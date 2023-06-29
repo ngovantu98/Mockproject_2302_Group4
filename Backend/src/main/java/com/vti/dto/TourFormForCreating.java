@@ -7,7 +7,7 @@ import com.vti.entity.Tour;
 public class TourFormForCreating {
 
 	private short id;
-	private BigDecimal price;
+	private String price;
 	private String name;
 	private String departurePlace;
 	private short emptySeat;
@@ -27,11 +27,11 @@ public class TourFormForCreating {
 		this.id = id;
 	}
 
-	public BigDecimal getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 

@@ -22,3 +22,6 @@ export const REMEMBER_ME_INFO = "REMEMBER_ME_INFO";
 // groups
 export const GET_LIST_GROUP = "GET_LIST_GROUP";
 export const GET_LIST_GROUP_SELECTED_ROWS = "GET_LIST_GROUP_SELECTED_ROWS";
+
+//tour
+export const GET_LIST_TOUR = "GET_LIST_TOUR";

@@ -31,12 +31,8 @@ public class TourController {
 	private ITourService service;
 
 	@GetMapping()
-	public ResponseEntity<?> getAllTours(
-			Pageable pageable, 
-			TourFilter filter,
-			@RequestParam(required = false) 
-			String search) {
-		Page<Tour> entities = service.getAllTours(pageable, filter, search);
+	public ResponseEntity<?> getAllTours() {
+		List<Tour> entities = service.getAllTours();
 		return new ResponseEntity<>(entities, HttpStatus.OK);
 	}
 

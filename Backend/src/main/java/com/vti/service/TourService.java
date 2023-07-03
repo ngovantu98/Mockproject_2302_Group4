@@ -3,17 +3,13 @@ package com.vti.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.vti.dto.TourFormForCreating;
 import com.vti.dto.TourFormForUpdating;
-import com.vti.dto.filter.TourFilter;
 import com.vti.entity.Tour;
 
 import com.vti.repository.TourRepository;
-import com.vti.specification.TourSpecificationBuilder;
 
 @Service
 public class TourService implements ITourService {
@@ -21,10 +17,8 @@ public class TourService implements ITourService {
 	@Autowired
 	private TourRepository repository;
 
-	public Page<Tour> getAllTours(Pageable pageable, TourFilter filter, String search) {
-
-		TourSpecificationBuilder specification = new TourSpecificationBuilder(filter, search);
-		return repository.findAll(specification.build(), pageable);
+	public List<Tour> getAllTours() {
+		return repository.findAll();
 	}
 
 	public List<Tour> getTourByName(String name) {

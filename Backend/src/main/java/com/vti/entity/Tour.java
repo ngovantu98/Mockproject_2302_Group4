@@ -1,14 +1,15 @@
 package com.vti.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.math.BigDecimal;
 
 import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -58,8 +59,13 @@ public class Tour implements Serializable {
 	@Column(name = "`tourImage`",length = 100)
 	private String tourImage;
 	
-	@OneToMany(mappedBy = "tour")
-	private List<Trip> trips;
+	@OneToMany(fetch = FetchType.LAZY,mappedBy = "tour")
+	//private List<Booking> bookings;
+	private List<Booking> listBooking = new ArrayList<>();
+	
+	@OneToMany(fetch = FetchType.LAZY,mappedBy = "tour")
+//	private List<Trip> trips;
+	private List<Trip> listTrip = new ArrayList<>();
 
 	public Tour(short id, String price, String name, String departurePlace,Date departureDay,short emptySeat, String time,String describe,String tourImage) {
 		this.id = id;
@@ -148,19 +154,27 @@ public class Tour implements Serializable {
 		this.tourImage = tourImage;
 	}
 
-	public List<Trip> getTrips() {
-		return trips;
+	public List<Booking> getListBooking() {
+		return listBooking;
 	}
 
-	public void setTrips(List<Trip> trips) {
-		this.trips = trips;
+	public void setListBooking(List<Booking> listBooking) {
+		this.listBooking = listBooking;
+	}
+
+	public List<Trip> getListTrip() {
+		return listTrip;
+	}
+
+	public void setListTrip(List<Trip> listTrip) {
+		this.listTrip = listTrip;
 	}
 
 	@Override
 	public String toString() {
 		return "Tour [id=" + id + ", name=" + name + ", describe=" + describe + ", departurePlace=" + departurePlace
 				+ ", departureDay=" + departureDay + ", emptySeat=" + emptySeat + ", time=" + time + ", price=" + price
-				+ ", tourImage=" + tourImage + ", trips=" + trips + "]";
+				+ ", tourImage=" + tourImage + ", listBooking=" + listBooking + ", listTrip=" + listTrip + "]";
 	}
 
 }

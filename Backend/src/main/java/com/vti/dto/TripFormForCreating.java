@@ -15,10 +15,11 @@ public class TripFormForCreating {
 	private Date startDate;
 	private Date endDate;
 	private String describe;
-	private String tripImage;
+	private String tripImage1;
+	private String tripImage2;
+	private String tripImage3;
+	private String tripImage4;
 	private String tripManage;
-	
-	
 	
 	public short getId() {
 		return id;
@@ -92,25 +93,46 @@ public class TripFormForCreating {
 		this.describe = describe;
 	}
 
-	public String getTripImage() {
-		return tripImage;
+	public String getTripImage1() {
+		return tripImage1;
 	}
 
-	public void setTripImage(String tripImage) {
-		this.tripImage = tripImage;
+	public void setTripImage1(String tripImage1) {
+		this.tripImage1 = tripImage1;
+	}
+	
+	public String getTripImage2() {
+		return tripImage2;
+	}
+	
+	public void setTripImage2(String tripImage2) {
+		this.tripImage2 = tripImage2;
+	}
+
+	public String getTripImage3() {
+		return tripImage3;
+	}
+
+	public void setTripImage3(String tripImage3) {
+		this.tripImage3 = tripImage3;
+	}
+
+	public String getTripImage4() {
+		return tripImage4;
+	}
+
+	public void setTripImage4(String tripImage4) {
+		this.tripImage4 = tripImage4;
 	}
 
 	public String getTripManage() {
 		return tripManage;
 	}
-
 	public void setTripManage(String tripManage) {
 		this.tripManage = tripManage;
 	}
 
-
-
 	public Trip toEntity() {
-		return new Trip(id, name, schedule, pointDeparture, destination, hotel, endDate, startDate, describe, tripImage, tripManage);
+		return new Trip(id, name, schedule, pointDeparture, destination, hotel, endDate, startDate, describe, tripImage1,tripImage2,tripImage3,tripImage4, tripManage);
 	}
 }

@@ -17,7 +17,7 @@ import com.vti.entity.Trip;
 
 public interface ITourService {
 
-	Page<Tour> getAllTours(Pageable pageable, TourFilter filter, String search);
+	List<Tour> getAllTours();
 
 	List<Tour> getTourByName(String name);
 

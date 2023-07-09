@@ -133,7 +133,7 @@ const SignUp = (props) => {
             <CardBody>
               <div className="m-sm-4">
                 <Form>
-                  {/* Firstname */}
+                  
                   <FormGroup>
                     <FastField
                       label="First Name"
@@ -145,7 +145,7 @@ const SignUp = (props) => {
                     />
                   </FormGroup>
 
-                  {/* Lastname */}
+                 
                   <FormGroup>
                     <FastField
                       label="Last Name"
@@ -157,7 +157,7 @@ const SignUp = (props) => {
                     />
                   </FormGroup>
 
-                  {/* username */}
+                  
                   <FormGroup>
                     <FastField
                       label="Username"
@@ -169,7 +169,7 @@ const SignUp = (props) => {
                     />
                   </FormGroup>
 
-                  {/* email */}
+                  
                   <FormGroup>
                     <FastField
                       label="Email"
@@ -181,7 +181,7 @@ const SignUp = (props) => {
                     />
                   </FormGroup>
 
-                  {/* password */}
+                
                   <FormGroup>
                     <FastField
                       label="Password"
@@ -193,7 +193,7 @@ const SignUp = (props) => {
                     />
                   </FormGroup>
 
-                  {/* confirm password */}
+                 
                   <FormGroup>
                     <FastField
                       label="Confirm Password"
@@ -207,7 +207,7 @@ const SignUp = (props) => {
 
                   <ErrorMessage name="errorForm" component={"div"} className="invalid-feedback" style={{ display: "block" }} />
 
-                  {/* submit */}
+                 
                   <div className="text-center mt-3">
                     <Button type="submit" color="primary" size="lg" disabled={isSubmitting}>
                       Sign up

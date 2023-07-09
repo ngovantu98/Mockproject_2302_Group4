@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vti.dto.TourDTO;
 import com.vti.dto.TourFormForCreating;
 import com.vti.dto.TourFormForUpdating;
 import com.vti.dto.filter.TourFilter;
@@ -32,7 +33,7 @@ public class TourController {
 
 	@GetMapping()
 	public ResponseEntity<?> getAllTours() {
-		List<Tour> entities = service.getAllTours();
+		List<TourDTO> entities = service.getAllTours();
 		return new ResponseEntity<>(entities, HttpStatus.OK);
 	}
 
@@ -46,11 +47,17 @@ public class TourController {
 		service.createTour(form);
 		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
 	}
-
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<?> getTourByID(@PathVariable(name = "id") short id) {
-		return new ResponseEntity<>(service.getTourByID(id), HttpStatus.OK);
+		TourDTO entities = service.getTourByID(id);
+		return new ResponseEntity<>(entities, HttpStatus.OK);
 	}
+
+//	@GetMapping(value = "/{id}")
+//	public ResponseEntity<?> getTourByID(@PathVariable(name = "id") short id) {
+//		return new ResponseEntity<>(service.getTourByID(id), HttpStatus.OK);
+//	}
 
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<?> updateTour(@PathVariable(name = "id") short id, @RequestBody TourFormForUpdating form) {

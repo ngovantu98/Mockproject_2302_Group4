@@ -38,9 +38,20 @@ const existsByName = (name) => {
     return Api.get(`${url}/name/${name}`);
 };
 
-const create = (name) => {
+const create = (name,departurePlace,describe,price,time,emptySeat,tourImage1,tourImage2,tourImage3,tourImage4,tourImage5,highLight) => {
     const body = {
-        name
+        name,
+        departurePlace,
+        describe,
+        price,
+        time,
+        emptySeat,
+        tourImage1,
+        tourImage2,
+        tourImage3,
+        tourImage4,
+        tourImage5,
+        highLight
     };
 
     return Api.post(url, body);

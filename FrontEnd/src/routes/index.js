@@ -20,6 +20,7 @@ import {
 import Landing from "../pages/landing/Landing";
 
 // Auth
+import CreateAdvise from "../pages/auth/CreateAdvise";
 import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
 import ResetPassword from "../pages/auth/ResetPassword";
@@ -75,8 +76,9 @@ import NewPassword from "../pages/auth/NewPassword";
 // auth
 import withAuth from "../HOC/withAuth";
 
+
 // Dashboards
-const Default = async(() => import("../pages/dashboards/Default"));
+//const Default = async(() => import("../pages/dashboards/Default"));
 const Analytics = async(() => import("../pages/dashboards/Analytics"));
 const Ecommerce = async(() => import("../pages/dashboards/Ecommerce"));
 const Crypto = async(() => import("../pages/dashboards/Crypto"));
@@ -121,6 +123,16 @@ const GoogleMaps = async(() => import("../pages/maps/GoogleMaps"));
 
 //tour
 const Tour = async(() => import("../pages/tour/Tour"));
+
+
+const Trip = async(() => import("../pages/trip/Trip"));
+
+const CreateTour = async(() => import("../pages/createTour/CreateTour"));
+
+
+const CreateTourDetail = async(() => import("../pages/createTourDetail/CreateTourDetail"));
+
+
 
 // Routes
 
@@ -180,13 +192,29 @@ const tourRoutes = {
   children: null
 };
 
-// const tourRoutes = {
-//   path: "/tours",
-//   name: "Tour",
-//   icon: ListIcon,
-//   component: Tour,
-//   children: null
-// };
+const tripRoutes = {
+  path: "/trips",
+  name: "TourDetail",
+  icon: ListIcon,
+  component: Trip,
+  children: null
+};
+
+const createTourRoutes = {
+  path: "/create-tours",
+  name: "CreateTour",
+  icon: ListIcon,
+  component: CreateTour,
+  children: null
+};
+
+const createTourDetailRoutes = {
+  path: "/create-tourdetail",
+  name: "CreateTourDetail",
+  icon: ListIcon,
+  component: CreateTourDetail,
+  children: null
+};
 
 const groupRoutes = {
   path: "/groups",
@@ -258,6 +286,11 @@ const authRoutes = {
   badgeColor: "secondary",
   badgeText: "Special",
   children: [
+    {
+      path: "/auth/create-advise",
+      name: "Create Advise",
+      component: CreateAdvise
+    },
     {
       path: "/auth/sign-in",
       name: "Sign In",
@@ -632,6 +665,9 @@ const settingsRoutes = {
 export const dashboard = [
   dashboardRoutes,
   tourRoutes,
+  tripRoutes,
+  createTourRoutes,
+  createTourDetailRoutes,
   groupRoutes,
   pageRoutes,
   layoutRoutes,
@@ -661,6 +697,9 @@ export const page = [authRoutes];
 export default [
   dashboardRoutes,
   tourRoutes,
+  tripRoutes,
+  createTourRoutes,
+  createTourDetailRoutes,
   groupRoutes,
   pageRoutes,
   authRoutes,

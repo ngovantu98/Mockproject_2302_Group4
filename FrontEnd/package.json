@@ -24,6 +24,8 @@
     "not dead"
   ],
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^38.1.0",
+    "@ckeditor/ckeditor5-react": "^6.1.0",
     "@fortawesome/fontawesome-svg-core": "1.2.31",
     "@fortawesome/free-brands-svg-icons": "5.15.0",
     "@fortawesome/free-regular-svg-icons": "5.15.0",
@@ -81,5 +83,7 @@
     "smartwizard": "5.1.1",
     "yup": "^0.32.8"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0"
+  }
 }

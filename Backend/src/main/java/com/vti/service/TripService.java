@@ -44,17 +44,10 @@ public class TripService implements ITripService {
 		Trip entity = repository.findById(id).get();
 		entity.setName(form.getName());
 		entity.setSchedule(form.getSchedule());
-		entity.setPointDeparture(form.getPointDeparture());
-		entity.setDestination(form.getDestination());
-		entity.setHotel(form.getHotel());
-		entity.setStartDate(form.getStartDate());
-		entity.setEndDate(form.getEndDate());
-		entity.setDescribe(form.getDescribe());
 		entity.setTripImage1(form.getTripImage1());
 		entity.setTripImage2(form.getTripImage2());
 		entity.setTripImage3(form.getTripImage3());
 		entity.setTripImage4(form.getTripImage4());
-		entity.setTripManage(form.getTripManage());
 		repository.save(entity);
 	}
 	

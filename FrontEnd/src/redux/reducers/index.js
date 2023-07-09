@@ -6,6 +6,7 @@ import theme from "./themeReducer";
 import userLoginInfo from "./userLoginInfoReducer";
 import group from "./groupReducer";
 import Tour from "./TourReducer";
+import Trip from "./TripReducer";
 
 
 import { reducer as toastr } from "react-redux-toastr";
@@ -18,5 +19,6 @@ export default combineReducers({
   userLoginInfo,
   group,
   Tour,
+  Trip,
 
 });

@@ -262,7 +262,7 @@ const Group = (props) => {
       {/* model create */}
       <Modal
         isOpen={isOpenModalCreate}
-      >
+        >
         <Formik
           initialValues={
             {
@@ -359,7 +359,7 @@ const Group = (props) => {
       {/* model update */}
       <Modal
         isOpen={isOpenModalUpdate}
-      >
+        >
         <Formik
           initialValues={
             {

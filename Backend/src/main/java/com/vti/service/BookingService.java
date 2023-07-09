@@ -1,22 +1,9 @@
 package com.vti.service;
 
-
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.vti.dto.BookingFormForCreating;
-import com.vti.dto.TripFormForCreating;
-import com.vti.dto.TripFormForUpdating;
-import com.vti.dto.filter.TripFilter;
-import com.vti.entity.Trip;
 import com.vti.repository.BookingRepository;
-import com.vti.repository.TripRepository;
-import com.vti.specification.TripSpecificationBuilder;
-
 
 @Service
 public class BookingService implements IBookingService {

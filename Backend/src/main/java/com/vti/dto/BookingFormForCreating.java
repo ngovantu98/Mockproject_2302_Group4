@@ -1,28 +1,23 @@
 package com.vti.dto;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 import com.vti.entity.Booking;
 import com.vti.entity.Tour;
-import com.vti.entity.Trip;
 
 public class BookingFormForCreating {
 
 	private short id;
 	private String name;
 	private String status;
-	private BigDecimal price;
-	private short totalMember;
-
+	private short tourId;
 
 	public BookingFormForCreating() {
 	}
 
+
 	public short getId() {
 		return id;
 	}
-	
+
 	public void setId(short id) {
 		this.id = id;
 	}
@@ -43,23 +38,15 @@ public class BookingFormForCreating {
 		this.status = status;
 	}
 
-	public BigDecimal getPrice() {
-		return price;
+	public short getTourId() {
+		return tourId;
 	}
 
-	public void setPrice(BigDecimal price) {
-		this.price = price;
-	}
-
-	public short getTotalMember() {
-		return totalMember;
-	}
-
-	public void setTotalMember(short totalMember) {
-		this.totalMember = totalMember;
+	public void setTourId(short tourId) {
+		this.tourId = tourId;
 	}
 
 	public Booking toEntity() {
-		return new Booking(id, name, status, price,totalMember);
+		return new Booking(id, name, status, new Tour());
 	}
 }

@@ -1,7 +1,6 @@
 package com.vti.entity;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,29 +27,22 @@ public class Booking implements Serializable {
 	@Column(name = "`status`", length = 50)
 	private String status;
 	
-	@Column(name = "totalMember")
-	private short totalMember;
-	
-	@Column(name = "price")
-	private BigDecimal price;
-	
 	@ManyToOne
-	@JoinColumn(name = "tour_id")
+	@JoinColumn(name = "`tourId`")
 	private Tour tour;
-//	
+	
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "`userId`")
 	private User user;
 	
-	public Booking(short id, String name,String status,BigDecimal price,short totalMember) {
+	public Booking(short id, String name,String status,Tour tour) {
 		this.id = id;
 		this.name = name;
 		this.status = status;
-		this.price = price;
-		this.totalMember = totalMember;
+		this.tour = tour;
 		
 	}
-	
+		
 	public Booking() {
 	}
 
@@ -78,22 +70,6 @@ public class Booking implements Serializable {
 		this.status = status;
 	}
 
-	public short getTotalMember() {
-		return totalMember;
-	}
-
-	public void setTotalMember(short totalMember) {
-		this.totalMember = totalMember;
-	}
-
-	public BigDecimal getPrice() {
-		return price;
-	}
-
-	public void setPrice(BigDecimal price) {
-		this.price = price;
-	}
-
 	public Tour getTour() {
 		return tour;
 	}
@@ -102,18 +78,11 @@ public class Booking implements Serializable {
 		this.tour = tour;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	@Override
 	public String toString() {
-		return "Booking [id=" + id + ", name=" + name + ", status=" + status + ", totalMember=" + totalMember
-				+ ", price=" + price + ", tour=" + tour + ", user=" + user + "]";
+		return "Booking [id=" + id + ", name=" + name + ", status=" + status + ", tourId=" + tour + "]";
 	}
+
+	
 
 }

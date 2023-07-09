@@ -9,6 +9,8 @@ public interface TripRepository extends JpaRepository<Trip, Short>, JpaSpecifica
 	
 
 	List<Trip> findByName(String name);
+	
+	List<Trip> findByTourId(short id);
 
 	//public boolean existsByName(String name);
 

@@ -25,3 +25,6 @@ export const GET_LIST_GROUP_SELECTED_ROWS = "GET_LIST_GROUP_SELECTED_ROWS";
 
 //tour
 export const GET_LIST_TOUR = "GET_LIST_TOUR";
+
+//trip
+export const GET_LIST_TRIP = "GET_LIST_TRIP";

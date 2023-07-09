@@ -7,17 +7,12 @@ public class TripFormForUpdating {
 	private short id;
 	private String name;
 	private String schedule;
-	private String pointDeparture;
-	private String destination;
-	private String hotel;
-	private Date startDate;
-	private Date endDate;
-	private String describe;
 	private String tripImage1;
 	private String tripImage2;
 	private String tripImage3;
 	private String tripImage4;
-	private String tripManage;
+	private short tourId;
+	
 	public short getId() {
 		return id;
 	}
@@ -36,42 +31,7 @@ public class TripFormForUpdating {
 	public void setSchedule(String schedule) {
 		this.schedule = schedule;
 	}
-	public String getPointDeparture() {
-		return pointDeparture;
-	}
-	public void setPointDeparture(String pointDeparture) {
-		this.pointDeparture = pointDeparture;
-	}
-	public String getDestination() {
-		return destination;
-	}
-	public void setDestination(String destination) {
-		this.destination = destination;
-	}
-	public String getHotel() {
-		return hotel;
-	}
-	public void setHotel(String hotel) {
-		this.hotel = hotel;
-	}
-	public Date getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-	public Date getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-	public String getDescribe() {
-		return describe;
-	}
-	public void setDescribe(String describe) {
-		this.describe = describe;
-	}
+	
 	public String getTripImage1() {
 		return tripImage1;
 	}
@@ -96,11 +56,12 @@ public class TripFormForUpdating {
 	public void setTripImage4(String tripImage4) {
 		this.tripImage4 = tripImage4;
 	}
-	public String getTripManage() {
-		return tripManage;
-	}
-	public void setTripManage(String tripManage) {
-		this.tripManage = tripManage;
-	}
 	
+	public short getTourId() {
+		return tourId;
+	}
+	public void setTourId(short tourId) {
+		this.tourId = tourId;
+	}
+
 }

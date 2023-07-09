@@ -7,9 +7,10 @@ import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -53,30 +54,54 @@ public class Tour implements Serializable {
 	@Column(name = "`time`",length = 100)
 	private String time;
 	
-	@Column(name = "`price`")
-	private String price;
+	@Column(name = "`price1`")
+	private String price1;
 	
-	@Column(name = "`tourImage`",length = 100)
-	private String tourImage;
+	@Column(name = "`tourImage1`",length = 500)
+	private String tourImage1;
 	
-	@OneToMany(fetch = FetchType.LAZY,mappedBy = "tour")
-	//private List<Booking> bookings;
+	@Column(name = "`tourImage2`",length = 500)
+	private String tourImage2;
+	
+	@Column(name = "`tourImage3`",length = 500)
+	private String tourImage3;
+	
+	@Column(name = "`tourImage4`",length = 500)
+	private String tourImage4;
+	
+	@Column(name = "`tourImage5`",length = 500)
+	private String tourImage5;
+	
+	@Column(name = "`price2`")
+	private String price2;
+	
+	@Column(name = "`tourManage`", length = 100)
+	private String tourManage;
+	
+	@Column(name = "`highLight`", length = 100)
+	private String highLight;
+	
+	@OneToMany(mappedBy = "tour")
 	private List<Booking> listBooking = new ArrayList<>();
-	
-	@OneToMany(fetch = FetchType.LAZY,mappedBy = "tour")
-//	private List<Trip> trips;
 	private List<Trip> listTrip = new ArrayList<>();
 
-	public Tour(short id, String price, String name, String departurePlace,Date departureDay,short emptySeat, String time,String describe,String tourImage) {
+	public Tour(short id, String price1, String name, String departurePlace,Date departureDay,short emptySeat, String time,String describe,String tourImage1,String tourImage2,String tourImage3,String tourImage4,String tourImage5,String price2,String tourManage,String highLight) {
 		this.id = id;
-		this.price = price;
+		this.price1 = price1;
 		this.name = name;
 		this.departurePlace = departurePlace;
 		this.departureDay = departureDay;
 		this.emptySeat = emptySeat;
 		this.time = time;
 		this.describe = describe;
-		this.tourImage = tourImage;
+		this.tourImage1 = tourImage1;
+		this.tourImage2 = tourImage2;
+		this.tourImage3 = tourImage3;
+		this.tourImage4 = tourImage4;
+		this.tourImage5 = tourImage5;
+		this.price2 = price2;
+		this.tourManage = tourManage;
+		this.highLight = highLight;
 	}
 
 	public Tour() {
@@ -138,20 +163,76 @@ public class Tour implements Serializable {
 		this.time = time;
 	}
 
-	public String getPrice() {
-		return price;
+	public String getPrice1() {
+		return price1;
 	}
 
-	public void setPrice(String price) {
-		this.price = price;
+	public void setPrice1(String price1) {
+		this.price1 = price1;
 	}
 
-	public String getTourImage() {
-		return tourImage;
+	public String getTourImage1() {
+		return tourImage1;
 	}
 
-	public void setTourImage(String tourImage) {
-		this.tourImage = tourImage;
+	public void setTourImage1(String tourImage1) {
+		this.tourImage1 = tourImage1;
+	}
+
+	public String getTourImage2() {
+		return tourImage2;
+	}
+
+	public void setTourImage2(String tourImage2) {
+		this.tourImage2 = tourImage2;
+	}
+
+	public String getTourImage3() {
+		return tourImage3;
+	}
+
+	public void setTourImage3(String tourImage3) {
+		this.tourImage3 = tourImage3;
+	}
+
+	public String getTourImage4() {
+		return tourImage4;
+	}
+
+	public void setTourImage4(String tourImage4) {
+		this.tourImage4 = tourImage4;
+	}
+
+	public String getTourImage5() {
+		return tourImage5;
+	}
+
+	public void setTourImage5(String tourImage5) {
+		this.tourImage5 = tourImage5;
+	}
+
+	public String getPrice2() {
+		return price2;
+	}
+
+	public void setPrice2(String price2) {
+		this.price2 = price2;
+	}
+
+	public String getTourManage() {
+		return tourManage;
+	}
+
+	public void setTourManage(String tourManage) {
+		this.tourManage = tourManage;
+	}
+
+	public String getHighLight() {
+		return highLight;
+	}
+
+	public void setHighLight(String highLight) {
+		this.highLight = highLight;
 	}
 
 	public List<Booking> getListBooking() {
@@ -173,8 +254,11 @@ public class Tour implements Serializable {
 	@Override
 	public String toString() {
 		return "Tour [id=" + id + ", name=" + name + ", describe=" + describe + ", departurePlace=" + departurePlace
-				+ ", departureDay=" + departureDay + ", emptySeat=" + emptySeat + ", time=" + time + ", price=" + price
-				+ ", tourImage=" + tourImage + ", listBooking=" + listBooking + ", listTrip=" + listTrip + "]";
+				+ ", departureDay=" + departureDay + ", emptySeat=" + emptySeat + ", time=" + time + ", price1="
+				+ price1 + ", tourImage1=" + tourImage1 + ", tourImage2=" + tourImage2 + ", tourImage3=" + tourImage3
+				+ ", tourImage4=" + tourImage4 + ", tourImage5=" + tourImage5 + ", price2=" + price2 + ", tourManage="
+				+ tourManage + ", highLight=" + highLight + ", listBooking=" + listBooking + ", listTrip=" + listTrip
+				+ "]";
 	}
 
 }

@@ -55,7 +55,7 @@ const Tour = (props) => {
                 <img className="tourImage" alt="" src={tourImage1} />
                 <CardHeader>
                   <h1 className="time">{time}</h1>
-                  <CardTitle tag="h5" classNameName="name">
+                  <CardTitle tag="h5" className="name">
                     {name}
                   </CardTitle>
                   <p className="code-tour">Mã tour :

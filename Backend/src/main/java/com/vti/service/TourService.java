@@ -59,12 +59,6 @@ public class TourService implements ITourService {
 		
 		return tourDTO;
 	}
-//		
-
-
-//	public Tour getTourByID(short id) {
-//		return tourRepository.findById(id).get();
-//	}
 
 	public void updateTour(short id, TourFormForUpdating form) {
 		Tour entity = tourRepository.findById(id).get();

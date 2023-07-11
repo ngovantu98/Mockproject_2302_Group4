@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import {
   Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  CardText,
-  CardTitle,
-  Col,
+  // Card,
+  // CardBody,
+  // CardFooter,
+  // CardHeader,
+  // CardText,
+  // CardTitle,
+  // Col,
   Container,
-  Row,
+  // Row,
 
 } from "reactstrap";
 import { selectTrips } from "../../redux/selectors/TripSelector ";
@@ -18,6 +18,7 @@ import { connect } from "react-redux";
 import TripApi from "../../api/TripApi";
 import * as Icon from "react-feather";
 import { useLocation } from "react-router-dom";
+import renderHTML from 'react-render-html';
 
 const Trip = (props) => {
   const location = useLocation();
@@ -109,11 +110,6 @@ const Trip = (props) => {
         <div class="col-md-7 col-12 right">
           <div class="group-services">
             <div class="item">
-              <Icon.Clock size="24" className="align-middle mr-2" />
-              <label class="nd">Thời gian:</label>
-              <p class="nd2">3 ngày 2 đêm</p>
-            </div>
-            <div class="item">
               <Icon.Truck size="24" className="align-middle mr-2" />
               <label class="nd">Phương tiện di chuyển:</label>
               <p class="nd2"> Máy bay, Xe du lịch</p>
@@ -156,15 +152,34 @@ const Trip = (props) => {
       <p className="title">Lịch trình</p>
       <div class="title2">
         {props.trips.listTrip && props.trips.listTrip.map((trip, key) => {
-          const { name, schedule, tripImage2 } = trip;
+          const { name, schedule } = trip;
 
           return (
 
-            <h1 class="nd">
+            // <h1 class="nd">
+            //   <br></br>
+            //   <br></br>
+            //   {name}
+            //   <br></br>
+            //   <br></br>
+            //   <br></br>
+            //   <div class="schedule">
+            //   {renderHTML(schedule)}
+            //   </div>
+             
               
-              {name}
-              {schedule}
-            </h1>
+
+
+            // </h1>
+            <div class="box-order">
+
+            <div>
+              <p class="nd10">{name}</p>
+              <div class="schedule">
+               {renderHTML(schedule)}
+               </div>
+            </div>
+          </div>
           );
         })}
       </div>

@@ -41,10 +41,8 @@ const SignUp = (props) => {
   return (
     <>
       <div className="text-center mt-4">
-        <h1 className="h2">Get started</h1>
-        <p className="lead">
-          Create account to experience the course at <b>VTI Academy</b>.
-        </p>
+        <h1 className="h2">Chào mừng bạn đến với Travel.com</h1>
+       
       </div>
 
       <Formik
